@@ -1,0 +1,26 @@
+// Helpers
+// Extends, Functions, Mixins go here
+
+// Elipsis and break text
+
+%txt-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+%txt-break {
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+// Media query mixin
+
+@mixin respond-to($val, $query: min-width, $media: only screen) {
+  @media #{$media} and ($query: $val) {
+    @content
+  }
+}

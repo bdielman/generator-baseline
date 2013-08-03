@@ -1,0 +1,44 @@
+// Button styles
+
+.button {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: em(5) em(10);
+  cursor: pointer;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+// Button modifiers
+
+.button--full {
+  display: block;
+  width: 100%;
+}

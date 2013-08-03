@@ -1,0 +1,29 @@
+// Content styles
+
+%headline {
+  margin-top: 0;
+  font-family: $heading-font;
+  line-height: 1.2;
+}
+
+.primary-headline {
+  @extend %headline;
+}
+
+.secondary-headline {
+  @extend %headline;
+}
+
+// Text styles
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-center {
+  text-align: center;
+}
