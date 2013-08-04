@@ -1,6 +1,6 @@
 {
   "name": "generator-baseline",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Yeoman generator that scaffolds out a simple static site",
   "keywords": [
     "yeoman-generator",
