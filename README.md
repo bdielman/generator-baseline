@@ -1,5 +1,4 @@
-# Generator-baseline
-[![Build Status](https://secure.travis-ci.org/bdielman/generator-baseline.png?branch=master)](https://travis-ci.org/bdielman/generator-baseline)
+# Baseline Generator [![Build Status](https://secure.travis-ci.org/bdielman/generator-baseline.png?branch=master)](https://travis-ci.org/bdielman/generator-baseline)
 
 A [Yeoman](http://yeoman.io) generator that scaffolds out a simple static site with the following feautres:
 
