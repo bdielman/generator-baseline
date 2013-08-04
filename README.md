@@ -1,7 +1,13 @@
 # Generator-baseline
 [![Build Status](https://secure.travis-ci.org/bdielman/generator-baseline.png?branch=master)](https://travis-ci.org/bdielman/generator-baseline)
 
-A generator for Yeoman.
+A [Yeoman](http://yeoman.io) generator that scaffolds out a simple static site with the following feautres:
+
+* [Sass](http://sass-lang.com) with [Bourbon](http://bourbon.io) mixins
+* [Grunt](http://gruntjs.com) tasks to make working on the site a bit easier
+* [Bower](http://bower.io) to manage external assets
+* [Normalize](http://necolas.github.io/normalize.css) in lieu of a reset
+* [SMACSS](http://smacss.com) based organization for stylesheets
 
 ## Getting started
 - Make sure you have [yo](https://github.com/yeoman/yo) installed:
