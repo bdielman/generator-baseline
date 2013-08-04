@@ -14,5 +14,9 @@ A [Yeoman](http://yeoman.io) generator that scaffolds out a simple static site w
 - Install the generator: `npm install -g generator-baseline`
 - Run: `yo baseline`
 
+## TODO
+
+* Make Bourbon mixins optional
+
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
