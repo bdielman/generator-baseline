@@ -29,16 +29,16 @@ describe('baseline generator', function () {
       'Gemfile',
       'package.json',
       'bower.json',
-      'dev/index.html',
-      'dev/sass/styles.scss',
-      'dev/sass/base/_settings.scss',
-      'dev/sass/base/_helpers.scss',
-      'dev/sass/base/_base.scss',
-      'dev/sass/base/_content.scss',
-      'dev/sass/layout/_layout.scss',
-      'dev/sass/modules/_buttons.scss',
-      'dev/sass/modules/_media.scss',
-      'dev/sass/states/_display.scss'
+      'app/index.html',
+      'app/sass/styles.scss',
+      'app/sass/base/_settings.scss',
+      'app/sass/base/_helpers.scss',
+      'app/sass/base/_base.scss',
+      'app/sass/base/_content.scss',
+      'app/sass/layout/_layout.scss',
+      'app/sass/modules/_buttons.scss',
+      'app/sass/modules/_media.scss',
+      'app/sass/states/_display.scss'
     ];
 
     helpers.mockPrompt(this.app, {

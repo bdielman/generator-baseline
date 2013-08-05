@@ -1,5 +1,5 @@
 .DS_Store
 node_modules
 components
-dev/assets/css/styles.css
-dev/assets/js/main.js
+app/assets/css/styles.css
+app/assets/js/main.js

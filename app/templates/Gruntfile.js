@@ -11,40 +11,49 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      src: ['Gruntfile.js', 'dev/js/**/*.js']
+      src: ['Gruntfile.js', 'app/js/**/*.js']
     },
     
     sass: {
       options: {
         style: 'expanded'
       },
-      'dev/assets/css/styles.css': [
+      'app/assets/css/styles.css': [
         'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',
         'bower_components/normalize-css/normalize.css',
-        'dev/sass/styles.scss'
+        'app/sass/styles.scss'
       ]
     },
     
     cssmin: {
-      'build/assets/css/styles.css': 'dev/assets/css/styles.css'
+      'build/assets/css/styles.css': 'app/assets/css/styles.css'
     },
 
     uglify: {
       files: {
+        src: 'app/assets/js/main.js',
+        dest: 'build/assets/js/main.js'
+      }
+    },
+
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
         src: [
           'bower_components/jquery/jquery.js'
         ],
-        dest: 'dev/assets/js/main.js'
+        dest: 'app/assets/js/main.js'
       }
     },
 
     copy: {
       files: {
         expand: true,
-        cwd: 'dev/',
+        cwd: 'app/',
         src: [
           '**/*.html',
-          'assets/js/*',
           'assets/images/**'
         ],
         dest: 'build/'
@@ -56,10 +65,10 @@ module.exports = function(grunt) {
     watch: {
       dev: {
         files: [
-          'dev/sass/**/*.scss',
-          'dev/scripts/**/*.js'
+          'app/sass/**/*.scss',
+          'app/scripts/**/*.js'
         ],
-        tasks: ['sass', 'jshint', 'uglify']
+        tasks: ['sass', 'jshint', 'concat']
       }
     },
 
@@ -68,7 +77,7 @@ module.exports = function(grunt) {
         options: {
           host: '*',
           port: 8000,
-          base: 'dev'
+          base: 'app'
         }
       }
     }
@@ -77,8 +86,8 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['connect:server', 'watch']);
 
-  // Developement task.
-  grunt.registerTask('dev', ['jshint', 'sass', 'uglify']);
+  // Development task.
+  grunt.registerTask('dev', ['jshint', 'sass', 'concat']);
 
   // Build task.
   grunt.registerTask('build', ['jshint', 'sass', 'uglify', 'cssmin', 'copy']);

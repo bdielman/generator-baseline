@@ -37,39 +37,39 @@ BaselineGenerator.prototype.askFor = function askFor() {
 };
 
 BaselineGenerator.prototype.createDirLayout = function createDirLayout() {
-  this.mkdir('dev');
-  this.mkdir('dev/scripts');
-  this.mkdir('dev/sass');
-  this.mkdir('dev/sass/base');
-  this.mkdir('dev/sass/layout');
-  this.mkdir('dev/sass/modules');
-  this.mkdir('dev/sass/states');
-  this.mkdir('dev/assets');
-  this.mkdir('dev/assets/images');
-  this.mkdir('dev/assets/js');
-  this.mkdir('dev/assets/css');
-  this.write('dev/index.html', this.indexFile);
+  this.mkdir('app');
+  this.mkdir('app/scripts');
+  this.mkdir('app/sass');
+  this.mkdir('app/sass/base');
+  this.mkdir('app/sass/layout');
+  this.mkdir('app/sass/modules');
+  this.mkdir('app/sass/states');
+  this.mkdir('app/assets');
+  this.mkdir('app/assets/images');
+  this.mkdir('app/assets/js');
+  this.mkdir('app/assets/css');
+  this.write('app/index.html', this.indexFile);
 };
 
 BaselineGenerator.prototype.sassFiles = function sassFiles() {
   // Main style sheet
-  this.copy('styles.scss', 'dev/sass/styles.scss');
+  this.copy('styles.scss', 'app/sass/styles.scss');
 
   // Base files
-  this.copy('_settings.scss', 'dev/sass/base/_settings.scss');
-  this.copy('_helpers.scss', 'dev/sass/base/_helpers.scss');
-  this.copy('_base.scss', 'dev/sass/base/_base.scss');
-  this.copy('_content.scss', 'dev/sass/base/_content.scss');
+  this.copy('_settings.scss', 'app/sass/base/_settings.scss');
+  this.copy('_helpers.scss', 'app/sass/base/_helpers.scss');
+  this.copy('_base.scss', 'app/sass/base/_base.scss');
+  this.copy('_content.scss', 'app/sass/base/_content.scss');
 
   // Layout files
-  this.copy('_layout.scss', 'dev/sass/layout/_layout.scss');
+  this.copy('_layout.scss', 'app/sass/layout/_layout.scss');
 
   // Module files
-  this.copy('_buttons.scss', 'dev/sass/modules/_buttons.scss');
-  this.copy('_media.scss', 'dev/sass/modules/_media.scss');
+  this.copy('_buttons.scss', 'app/sass/modules/_buttons.scss');
+  this.copy('_media.scss', 'app/sass/modules/_media.scss');
 
   // State files
-  this.copy('_display.scss', 'dev/sass/states/_display.scss');
+  this.copy('_display.scss', 'app/sass/states/_display.scss');
 };
 
 BaselineGenerator.prototype.packageFile = function packageFile() {
