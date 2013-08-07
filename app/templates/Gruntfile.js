@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         style: 'expanded'
       },
       'app/assets/css/styles.css': [
-        'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',
+        <% if (includeBourbon) { %>'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',<% } %>
         'bower_components/normalize-css/normalize.css',
         'app/sass/styles.scss'
       ]

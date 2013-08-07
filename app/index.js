@@ -22,13 +22,22 @@ BaselineGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  var prompts = [{
-    name: 'projectName',
-    message: 'Would you like name to this project?'
-  }];
+  var prompts = [
+    {
+      name: 'projectName',
+      message: 'Would you like name to this project?'
+    },
+    {
+      type: 'confirm',
+      name: 'includeBourbon',
+      message: 'Would you like to include Bourbon Sass mixins?',
+      default: true
+    }
+  ];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
+    this.includeBourbon = props.includeBourbon;
 
     cb();
   }.bind(this));

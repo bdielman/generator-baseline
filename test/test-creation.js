@@ -42,7 +42,8 @@ describe('baseline generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'projectName': 'Test Project'
+      'projectName': 'Test Project',
+      'includeBourbon': true
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {

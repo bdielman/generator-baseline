@@ -5,9 +5,9 @@ $link-disabled: #dedede;
 
 // Fonts
 
-$heading-font: $helvetica; // TODO: Default to Helvetica for now, to be changed later
-$sans-serif-font: $helvetica;
-$serif-font: $georgia;
+$heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif; // TODO: Default to Helvetica for now, to be changed later
+$sans-serif-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-font: Georgia, Times, "Times New Roman", serif;
 
 // Layout
 
