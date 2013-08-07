@@ -12,8 +12,6 @@ var BaselineGenerator = module.exports = function BaselineGenerator(args, option
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
-
-  this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
 };
 
 util.inherits(BaselineGenerator, yeoman.generators.Base);
@@ -48,7 +46,6 @@ BaselineGenerator.prototype.createDirLayout = function createDirLayout() {
   this.mkdir('app/assets/images');
   this.mkdir('app/assets/js');
   this.mkdir('app/assets/css');
-  this.write('app/index.html', this.indexFile);
 };
 
 BaselineGenerator.prototype.sassFiles = function sassFiles() {
@@ -72,12 +69,16 @@ BaselineGenerator.prototype.sassFiles = function sassFiles() {
   this.copy('_display.scss', 'app/sass/states/_display.scss');
 };
 
+BaselineGenerator.prototype.indexFile = function indexFile() {
+  this.template('_index.html', 'app/index.html');
+};
+
 BaselineGenerator.prototype.packageFile = function packageFile() {
   this.template('_package.json', 'package.json');
 };
 
 BaselineGenerator.prototype.bower = function bower() {
-  this.copy('_bower.json', 'bower.json');
+  this.template('_bower.json', 'bower.json');
 };
 
 BaselineGenerator.prototype.git = function git() {
