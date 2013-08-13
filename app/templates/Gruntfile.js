@@ -3,36 +3,43 @@ module.exports = function(grunt) {
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
+  var yeomanConfig = {
+    app: 'app',
+    build: 'build'
+  };
+
   // Project configuration.
   grunt.initConfig({
+    yeoman: yeomanConfig,
+
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       options: {
         jshintrc: '.jshintrc'
       },
-      src: ['Gruntfile.js', 'app/js/**/*.js']
+      src: ['Gruntfile.js', '<%%= yeoman.app %>/js/**/*.js']
     },
     
     sass: {
       options: {
         style: 'expanded'
       },
-      'app/assets/css/styles.css': [
+      '<%%= yeoman.app %>/assets/css/styles.css': [
         <% if (includeBourbon) { %>'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',<% } %>
         'bower_components/normalize-css/normalize.css',
-        'app/sass/styles.scss'
+        '<%%= yeoman.app %>/sass/styles.scss'
       ]
     },
     
     cssmin: {
-      'build/assets/css/styles.css': 'app/assets/css/styles.css'
+      '<%%= yeoman.build %>/assets/css/styles.css': '<%%= yeoman.app %>/assets/css/styles.css'
     },
 
     uglify: {
       files: {
-        src: 'app/assets/js/main.js',
-        dest: 'build/assets/js/main.js'
+        src: '<%%= yeoman.app %>/assets/js/main.js',
+        dest: '<%%= yeoman.build %>/assets/js/main.js'
       }
     },
 
@@ -44,29 +51,29 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/jquery.js'
         ],
-        dest: 'app/assets/js/main.js'
+        dest: '<%%= yeoman.app %>/assets/js/main.js'
       }
     },
 
     copy: {
       files: {
         expand: true,
-        cwd: 'app/',
+        cwd: '<%%= yeoman.app %>',
         src: [
           '**/*.html',
           'assets/images/**'
         ],
-        dest: 'build/'
+        dest: '<%%= yeoman.build %>'
       }
     },
 
-    clean: ['build/'],
+    clean: ['<%%= yeoman.build %>'],
 
     watch: {
       dev: {
         files: [
-          'app/sass/**/*.scss',
-          'app/scripts/**/*.js'
+          '<%%= yeoman.app %>/sass/**/*.scss',
+          '<%%= yeoman.app %>/scripts/**/*.js'
         ],
         tasks: ['sass', 'jshint', 'concat']
       }
@@ -77,7 +84,7 @@ module.exports = function(grunt) {
         options: {
           host: '*',
           port: 8000,
-          base: 'app'
+          base: '<%%= yeoman.app %>'
         }
       }
     }
