@@ -15,9 +15,5 @@ A [Yeoman](http://yeoman.io) generator that scaffolds out a simple static site w
 - Create and navigate to your project directory: `mkdir project-name && cd project-name`
 - Run: `yo baseline`
 
-## TODO
-
-- Make Bourbon mixins optional
-
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
