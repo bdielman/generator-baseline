@@ -1,6 +1,6 @@
 {
   "name": "generator-baseline",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Yeoman generator that scaffolds out a simple static site",
   "keywords": [
     "yeoman-generator",
@@ -23,10 +23,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.12.0"
+    "yeoman-generator": "~0.13.1"
   },
   "devDependencies": {
-    "mocha": "~1.10.0"
+    "mocha": "~1.12.0"
   },
   "engines": {
     "node": ">=0.8.0"
