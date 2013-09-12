@@ -1,7 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  // load all grunt tasks matching the `grunt-*` pattern
+  require('load-grunt-tasks')(grunt);
 
   var yeomanConfig = {
     app: 'app',
