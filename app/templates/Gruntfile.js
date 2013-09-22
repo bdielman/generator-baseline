@@ -76,7 +76,10 @@ module.exports = function(grunt) {
           '<%%= yeoman.app %>/sass/**/*.scss',
           '<%%= yeoman.app %>/scripts/**/*.js'
         ],
-        tasks: ['sass', 'jshint', 'concat']
+        tasks: ['sass', 'jshint', 'concat'],
+        options: {
+          livereload: true
+        }
       }
     },
 
@@ -98,5 +101,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['jshint', 'sass', 'concat']);
 
   // Build task.
-  grunt.registerTask('build', ['jshint', 'sass', 'uglify', 'cssmin', 'copy']);
+  grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin', 'copy']);
 };
