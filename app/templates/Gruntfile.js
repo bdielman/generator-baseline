@@ -61,13 +61,23 @@ module.exports = function(grunt) {
         expand: true,
         cwd: '<%%= yeoman.app %>',
         src: [
-          '**/*.html',
-          'assets/images/**'
+          '**/*.html'
         ],
         dest: '<%%= yeoman.build %>'
       }
     },
 
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: '<%%= yeoman.app %>',
+          src: ['assets/images/**/*.{png,jpg,gif}'],
+          dest: '<%%= yeoman.build %>'
+        }]
+      }
+    },
+    
     clean: ['<%%= yeoman.build %>'],
 
     watch: {
@@ -101,5 +111,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['jshint', 'sass', 'concat']);
 
   // Build task.
-  grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin', 'copy']);
+  grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin', 'copy', 'imagemin']);
 };
