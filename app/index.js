@@ -25,7 +25,7 @@ BaselineGenerator.prototype.askFor = function askFor() {
   var prompts = [
     {
       name: 'projectName',
-      message: 'Would you like name to this project?'
+      message: 'What would you like to name this project?'
     },
     {
       type: 'confirm',
